@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+	<PreferenceCategory android:title="Notifications" android:key="notifications">
+		<CheckBoxPreference android:title="Enable Notifications"
+			android:defaultValue="true" android:summary="Check this setting to receive notifications"
+			android:key="notifPref" />
+		<ListPreference android:title="Notification Type"
+			android:summary="Set notifications to vibrate, play a sound, or both"
+			android:key="notifTypePref" android:defaultValue="both"
+			android:entries="@array/notifTypeArray" android:entryValues="@array/notifTypeValues" />
+		<ListPreference android:title="Notification Time"
+			android:summary="Time prior to the event that the notification will occur"
+			android:key="notifTimePref" android:defaultValue="30"
+			android:entries="@array/notifTimeArray" android:entryValues="@array/notifTimeValues" />
+		<EditTextPreference
+ 			android:summary="Intialize the time stamp to null"
+ 			android:defaultValue="null"
+ 			android:key="lastUpdated"/>
+	</PreferenceCategory>
+	<PreferenceCategory android:title="Location">
+		<ListPreference android:title="City"
+			android:summary="Max distance from your location that events should be shown"
+			android:key="locCityPref" android:defaultValue="Boulder, CO"
+			android:entries="@array/locCityArray" android:entryValues="@array/locCityArray" />
+		<ListPreference android:title="Radius"
+			android:summary="Max distance from your location that events should be shown"
+			android:key="locRadiusPref" android:defaultValue="20"
+			android:entries="@array/locRadiusArray" android:entryValues="@array/locRadiusValues" />
+	</PreferenceCategory>
+</PreferenceScreen>

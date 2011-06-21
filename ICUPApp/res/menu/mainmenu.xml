@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:title="Main Menu" android:id="@+id/main" android:icon="@drawable/home_menu"></item>
+<item android:title="Featured" android:id="@+id/featuredevent" android:icon="@drawable/featured_menu"></item>
+<item android:title="Events" android:id="@+id/events" android:icon="@drawable/events_menu"></item>
+<item android:title="Orgs" android:id="@+id/organizations" android:icon="@drawable/organizations_menu"></item>
+<item android:title="Favorites" android:id="@+id/favorites" android:icon="@drawable/favorites_menu"></item>
+<item android:title="Settings" android:id="@+id/settings" android:icon="@drawable/settings_menu"></item>
+</menu>
