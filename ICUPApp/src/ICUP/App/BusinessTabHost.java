@@ -45,7 +45,7 @@ public class BusinessTabHost extends ICUPListActivity {
     private final String extra = "?category=";
     private final String timeStamp = "&lastUpdatedStr=";
     private String cat = "";
-    private final String base = "http://174.136.5.67:8080/api/organizations.json";
+    private final String base = "http://174.136.5.67:8080/collegepedia/api/organizations.json";
     private String url = base;
     private boolean searchOn = false;
 
