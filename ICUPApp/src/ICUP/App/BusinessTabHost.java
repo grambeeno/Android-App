@@ -482,7 +482,6 @@ public class BusinessTabHost extends ICUPListActivity {
  	   this.setTitle("Organization List - " + cat);
  	   if(thread.isAlive()){
  		   thread.stop();
- 		   
  	   }
  	   update();
     }
@@ -503,7 +502,6 @@ public class BusinessTabHost extends ICUPListActivity {
  	   
  	   if(thread.isAlive()){
  		   thread.stop();
- 		   
  	   }
  	   
  	   update();

@@ -502,10 +502,6 @@ public class EventTabHost extends ICUPListActivity {
 		}
 		else
 		{
-			//Only a basic search - set date to be 5 days after current date
-			//    	if (advancedSearchVisible == false){
-			//    		end.setDate(endDate.getDayOfMonth() + 2);
-			//    	}
 			// do the search
 			ArrayList<EventDTO> e = dm.searchEvent(category, eventName, orgName, start, end);
 			
@@ -588,7 +584,6 @@ public class EventTabHost extends ICUPListActivity {
 
 		if(thread.isAlive()){
 			thread.stop();
-
 		}
 
 		update();
@@ -615,7 +610,6 @@ public class EventTabHost extends ICUPListActivity {
 
 		if(thread.isAlive()){
 			thread.stop();
-
 		}
 
 		update();
