@@ -81,7 +81,8 @@ public class ICUPDb extends SQLiteOpenHelper {
     
     private static final String TABLE_CREATE_UPDATEORG =
     	"create table updateorg (_id integer primary key autoincrement, "
-        + "business_update_time text not null, category text not null);";
+        + "business_update_time bigint not null,"
+        + "category text not null);";
     
     /**
      * Database creation sql statement
@@ -446,15 +447,14 @@ public class ICUPDb extends SQLiteOpenHelper {
 
     //Create update time
     //Create update time or update it for Orgs
-    public boolean createUpdateTimeOrg (String string, String cat) throws SQLException {
+    public boolean createUpdateTimeOrg (String cat, long time) throws SQLException {
     	Cursor mCursor = null;
-    	mCursor =
-    		getmDb().query(true, TABLE_UPDATEORG, new String[] {KEY_ROWID},  KEY_CATEGORY + "=" + "'" + cat + "'"  
-    				, null, null, null, null, null); 
-    	//Entry already exists don't create a new entry for in update table
+    	mCursor = getmDb().query(true, TABLE_UPDATEORG, new String[] {KEY_ROWID},  KEY_CATEGORY + "=" + "'" + cat + "'",  
+    				null, null, null, null, null); 
+    	//Entry exists update it in table
     	if (mCursor != null && mCursor.moveToFirst()){
         	ContentValues inputValue = new ContentValues();
-        	inputValue.put(KEY_BUSINESS_UPDATE_TIME, string);
+        	inputValue.put(KEY_BUSINESS_UPDATE_TIME, time);
         	
         	int row = getmDb().update(TABLE_UPDATEORG, inputValue, KEY_CATEGORY + "=" + "'" + cat + "'", null);
  			mCursor.close();
@@ -466,11 +466,11 @@ public class ICUPDb extends SQLiteOpenHelper {
         		throw new SQLException();
         	}
     	}
-    	//Entry doesn't exists
+    	//Entry does not exist
     	else {
     		long rowID;
         	ContentValues inputValue = new ContentValues();
-        	inputValue.put(KEY_BUSINESS_UPDATE_TIME, string);
+        	inputValue.put(KEY_BUSINESS_UPDATE_TIME, time);
         	inputValue.put(KEY_CATEGORY, cat);
         	rowID = getmDb().insert(TABLE_UPDATEORG, null, inputValue);
  			mCursor.close();
@@ -489,21 +489,21 @@ public class ICUPDb extends SQLiteOpenHelper {
      * by the server
      * @return String 
      */
-     public String fetchUpdateTimeOrg(String cat){
-     	String time;
+     public long fetchUpdateTimeOrg(String cat){
+     	long time;
      	Cursor mCursor =
      		getmDb().query(false, TABLE_UPDATEORG, new String[] {KEY_BUSINESS_UPDATE_TIME}, KEY_CATEGORY + "=" + "'" + cat + "'"
      				, null,null, null, null, null); 
      	if (mCursor != null && mCursor.moveToFirst() ) { 		
- 			time = mCursor.getString(mCursor.getColumnIndex(KEY_BUSINESS_UPDATE_TIME));
+ 			time = mCursor.getLong(mCursor.getColumnIndex(KEY_BUSINESS_UPDATE_TIME));
  			mCursor.close();
  			mCursor.deactivate();
  			return time;	
      	}
      	mCursor.close();
      	mCursor.deactivate();
-     	//Returns null if failed
-     	return null;
+     	//Returns -1 if failed
+     	return -1;
      }
     
      /**
@@ -513,8 +513,8 @@ public class ICUPDb extends SQLiteOpenHelper {
       * @throws SQLException
       */
     public boolean createUpdateTimeEvents (String cat, long time) throws SQLException {
-    	Cursor mCursor =
-    		getmDb().query(true, TABLE_UPDATEEVENTS, new String[] {KEY_ROWID},  KEY_CATEGORY + "=" + "'" + cat + "'", 
+    	Cursor mCursor = null;
+    	mCursor = getmDb().query(true, TABLE_UPDATEEVENTS, new String[] {KEY_ROWID},  KEY_CATEGORY + "=" + "'" + cat + "'", 
     				null, null, null, null, null); 
     	//Entry exists update it in table
     	if (mCursor != null && mCursor.moveToFirst()){
@@ -774,8 +774,6 @@ public class ICUPDb extends SQLiteOpenHelper {
      	//Returns -1 if failed
      	return -1;
      }
-     
-     
      
     /**
      * counts the number of rows in a table to see if we need to go to the server to 
