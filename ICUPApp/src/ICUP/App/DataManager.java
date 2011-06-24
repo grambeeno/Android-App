@@ -158,13 +158,6 @@ public class DataManager {
 		Date currentTime = new Date();
 
 		long lastUpdated = db.fetchUpdateTimeOrg(cat);
-		if (lastUpdated == -1)
-		{
-			//Log.i(TAG, "last updated was null ");
-			// check the format of the time
-			db.createUpdateTimeOrg(cat, currentTime.getTime());
-		}
-		
 		newUrl += "&lastUpdated=";
 		newUrl += lastUpdated;
 		
