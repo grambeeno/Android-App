@@ -70,20 +70,25 @@ public class EventAdapter extends ArrayAdapter<EventDTO>
             
             if (o != null) {
                     TextView title = (TextView) v.findViewById(R.id.eventtitle);
-                    TextView desc = (TextView) v.findViewById(R.id.eventdesc);
                     TextView time = (TextView) v.findViewById(R.id.eventstarttime);
                     TextView id = (TextView)v.findViewById(R.id.eventId);
+                    
                     if (title != null) {
                     	title.setText(o.getName());
-                    }
-                    if(desc != null){
-                    	desc.setText(o.getDescription());
                     }
                     if (time != null) {
                     	time.setText("Start Time: " + o.getStartDatetime().toLocaleString());
                     }
                     if(id != null){
                     	id.setText(o.getId().toString());
+                    }
+                    
+                    if (curType == adapterType.FAVORITE)
+                    {
+                    	TextView desc = (TextView) v.findViewById(R.id.eventdesc);
+                    	if(desc != null){
+                        	desc.setText(o.getDescription());
+                        }
                     }
             }
                            

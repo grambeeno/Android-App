@@ -50,16 +50,21 @@ public class BusinessAdapter extends ArrayAdapter<OrganizationDTO>
             OrganizationDTO o = items.get(position);
             if (o != null) {
                     TextView name = (TextView) v.findViewById(R.id.businessname);
-                    TextView desc = (TextView) v.findViewById(R.id.businessdesc);
                     TextView id = (TextView)v.findViewById(R.id.businessId);
+                    
                     if (name != null) {
                         name.setText(o.getName());
                     }
-                    if(desc != null){
-                        desc.setText("Description: " + o.getDescription());
-                    }
                     if(id != null){
                         id.setText(o.getId().toString());
+                    }
+                    
+                    if(this.isFavs == true)
+                    {
+                    	TextView desc = (TextView) v.findViewById(R.id.businessdesc);
+                    	if(desc != null){
+                            desc.setText("Description: " + o.getDescription());
+                        }
                     }
             }
             

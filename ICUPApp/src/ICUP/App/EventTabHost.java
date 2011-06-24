@@ -44,7 +44,7 @@ public class EventTabHost extends ICUPListActivity {
 	private final String extra = "category=";
 	private final String firstArg = "?";
 	private final String nArg = "&";
-	private final String base = "http://174.136.5.67:8080/collegepedia/api/events.json";
+	private final String base = "http://174.136.5.67:8080/api/events.json";
 	private String url = base;
 	private EventDTO curSelection;
 	private String limitString = "limit=";
