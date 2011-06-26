@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-<declare-styleable name="CountdownView">
-<attr name="setEndTime" format="string"/>
-</declare-styleable>
-<declare-styleable name="TutorialGallery">
-	<attr name="android:galleryItemBackground" />
-	</declare-styleable>
-</resources>
