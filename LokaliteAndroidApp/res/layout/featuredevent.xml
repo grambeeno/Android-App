@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  	xmlns:android="http://schemas.android.com/apk/res/android"
+  	xmlns:my="http://schemas.android.com/apk/res/lokalite.android.app"
+  	android:orientation="vertical"
+  	android:layout_width="fill_parent"
+  	android:layout_height="fill_parent"
+  	android:id="@+id/featuredeventlayout">
+         
+	<ScrollView android:id="@+id/FeaturedEventScrollView"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+    android:layout_marginBottom="50dip">
+    	
+        <LinearLayout
+  			xmlns:android="http://schemas.android.com/apk/res/android"
+	  		xmlns:my="http://schemas.android.com/apk/res/lokalite.android.app"
+  			android:orientation="vertical"
+  			android:layout_width="fill_parent"
+  			android:layout_height="fill_parent"
+  			android:gravity="center_vertical|center_horizontal">
+  			
+  			 <TextView
+		    	android:id ="@+id/description"
+    			android:layout_width="fill_parent" 
+    			android:layout_height="wrap_content"
+				android:gravity="center_vertical|center_horizontal"
+    			android:text="Description"
+    			android:textSize="20sp"
+    		/>
+  			
+			<ImageView
+				android:id="@+id/featuredEventLogo"
+				android:layout_width="200dip"
+  				android:layout_height="200dip"
+    			android:layout_marginTop="10dip"
+    			android:layout_marginBottom="10dip"
+    			android:gravity="center_vertical|center_horizontal"
+    			android:src="@drawable/featuredeventtemp"
+	    	 />
+    	 		    	
+    	 	<TextView
+    	 		android:id="@+id/featuredLocation"
+    	 		android:layout_width="fill_parent"
+    	 		android:layout_height="wrap_content"
+  	 			android:gravity="center_horizontal|top"
+    	 		android:text="Event Location: No Location"
+    	 	/>
+    	 	
+    	 	<TextView
+    	 		android:id="@+id/featuredDate"
+    	 		android:layout_width="fill_parent"
+    	 		android:layout_height="wrap_content"
+   	 			android:gravity="center_horizontal|top"
+    	 		android:text="Date: No Date"
+    	 	/>
+    	 	
+	    	<TextView
+	    		android:id ="@+id/finePrint"
+    			android:layout_width="fill_parent" 
+    			android:layout_height="wrap_content"
+    			android:gravity="center_horizontal|top"
+    			android:text="fine print"
+    		/>
+    		
+       	</LinearLayout>
+       	
+   	</ScrollView>	
+   		
+	<RelativeLayout
+		style="@android:style/ButtonBar"
+		android:layout_marginTop="-55dip"
+		android:id="@+id/buttonbar"
+		android:layout_height="wrap_content" 
+		android:layout_width="fill_parent"
+		android:orientation="horizontal">
+			
+       	<ImageButton
+            android:id="@+id/mapButton"
+           	android:layout_width="wrap_content"
+           	android:layout_height="wrap_content"
+           	android:layout_weight="1"
+        	android:src="@android:drawable/ic_menu_mapmode"
+        	android:onClick="onMap"
+		/>
+		
+       	<ImageButton
+            android:id="@+id/addToFavButton"
+           	android:layout_width="wrap_content"
+           	android:layout_height="wrap_content"
+           	android:layout_weight="1"
+           	android:layout_alignParentRight="true"
+           	android:src="@drawable/btn_star"
+           	android:onClick="onAddToFavs"
+		/>
+	</RelativeLayout>
+</LinearLayout>	

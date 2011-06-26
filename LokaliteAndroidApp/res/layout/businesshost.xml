@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/businesstabhost"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="5dp">
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp" 
+            android:layout_weight="1">
+            
+            <!-- Businesses Directory -->
+            <LinearLayout
+            	android:id="@+id/businessdirtab"
+  				xmlns:android="http://schemas.android.com/apk/res/android"
+  				android:orientation="vertical"
+  				android:layout_width="fill_parent"
+  				android:layout_height="fill_parent">
+			
+				<ListView
+					android:id="@android:id/list"
+					android:layout_width="fill_parent"
+        			android:layout_height="fill_parent"
+    			/>
+			  
+    			<TextView  
+    				android:id="@android:id/empty"
+    				android:layout_width="fill_parent" 
+    				android:layout_height="wrap_content" 
+    				android:text="@string/organizationdir"
+    			/>
+			</LinearLayout>
+			
+			<!-- Businesses Search -->
+			<RelativeLayout
+				android:id="@+id/businesssearch"
+  				xmlns:android="http://schemas.android.com/apk/res/android"
+  				android:layout_width="wrap_content"
+  				android:layout_height="wrap_content">
+  
+				<ImageButton
+					android:id="@+id/businessSearchButton"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentRight="true"
+					android:src="@android:drawable/ic_search_category_default"
+					android:onClick="businessSearchButtonClicked"
+				/>
+				<EditText
+					android:id="@+id/businessSearchText"
+					android:hint= "Organization Name"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_toLeftOf="@id/businessSearchButton"
+				/>
+				
+				<ScrollView android:id="@+id/businessSearchScrollView"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/businessSearchText"
+				>
+				<RelativeLayout
+				android:id="@+id/businessAdvancedSearch"
+  				xmlns:android="http://schemas.android.com/apk/res/android"
+  				android:layout_width="fill_parent"
+  				android:layout_height="wrap_content">
+								
+				<TextView
+					android:id="@+id/catText"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_below="@id/businessSearchText"
+					android:text="Categories:"
+				/>
+
+			    <RadioGroup
+			    	android:id="@+id/rGroup"
+    			  	android:layout_width="wrap_content"
+      				android:layout_height="wrap_content"
+      				android:orientation="vertical"
+      				android:layout_below="@id/catText">
+	
+					<RadioButton
+						android:id="@+id/currentOrgCheck"
+						android:checked="true"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Current"
+					/>
+					<RadioButton
+						android:id="@+id/allCheck"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_below="@id/currentOrgCheck"
+						android:text="All Categories"
+					/>
+				
+				</RadioGroup>
+				<EditText
+					android:id="@+id/eventSearchText"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_below="@id/rGroup"
+					android:hint="Hosted Events"
+				/>
+				
+			</RelativeLayout>
+
+
+		
+			</ScrollView>
+			<Button
+					android:id="@+id/businessAdvancedButtonExtra"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_below="@id/businessSearchScrollView"
+					android:text="@string/Advanced"
+					android:onClick="businessAdvancedButtonClicked"
+				/>	
+			</RelativeLayout>
+		</FrameLayout>
+		
+		<TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0" />
+	</LinearLayout>
+</TabHost>
