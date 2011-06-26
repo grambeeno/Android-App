@@ -15,7 +15,7 @@
 	>
 		<LinearLayout
   			xmlns:android="http://schemas.android.com/apk/res/android"
-	  		xmlns:my="http://schemas.android.com/apk/res/ICUP.App"
+	  		xmlns:my="http://schemas.android.com/apk/res/lokalite.android.app"
   			android:orientation="vertical"
   			android:layout_width="fill_parent"
   			android:layout_height="fill_parent"
@@ -29,11 +29,11 @@
 			/>
 	    
 			<TextView
-				android:id="@+id/icupWelcome"
+				android:id="@+id/lokaliteWelcome"
 				android:layout_width="fill_parent"	
 				android:layout_height="wrap_content"
 				android:gravity="center_horizontal"
-				android:text="@string/icupWelcomeText"
+				android:text="@string/lokaliteWelcomeText"
 			/> 
 			 
 	
@@ -41,15 +41,15 @@
 				android:id="@+id/tutorialButton"
 				android:layout_width="wrap_content" 
 				android:layout_height="wrap_content"
-				android:layout_below="@id/icupWelcome" 
+				android:layout_below="@id/lokaliteWelcome" 
 				android:text="Start Tutorial"
 				android:onClick="startTutorialButtonClicked" 
 			/>	  
 		    <TextView  
-			    android:id="@+id/icupInfo"
+			    android:id="@+id/lokaliteInfo"
 			    android:layout_width="fill_parent" 
 			    android:layout_height="wrap_content" 
-			    android:text="@string/icupInfoText"
+			    android:text="@string/lokaliteInfoText"
 		    />
 		    <TextView
 			 	android:id="@+id/linkToLokalite"

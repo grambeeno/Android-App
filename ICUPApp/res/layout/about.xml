@@ -16,9 +16,9 @@
             android:padding="2dp"
             android:layout_weight="1" >
 		
-		<!-- What is ICUP Tab -->
+		<!-- What is Lokalite Tab -->
 		<LinearLayout
-            	android:id="@+id/icupinfotab"
+            	android:id="@+id/lokaliteinfotab"
   				xmlns:android="http://schemas.android.com/apk/res/android"
   				android:orientation="vertical"
   				android:layout_width="fill_parent"
@@ -28,12 +28,12 @@
     				android:id="@android:id/empty"
     				android:layout_width="fill_parent" 
     				android:layout_height="wrap_content" 
-    				android:text="What is ICUP?"
+    				android:text="What is Lokalite?"
     			/>
     	</LinearLayout>
     			
     			<LinearLayout
-	            	android:id="@+id/icupinfotabtwo"
+	            	android:id="@+id/lokaliteinfotabtwo"
 	  				xmlns:android="http://schemas.android.com/apk/res/android"
 	  				android:orientation="vertical"
 	  				android:layout_width="fill_parent"

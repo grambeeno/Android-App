@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">ICUP</string>
+    <string name="app_name">Lokalite</string>
     <string name="settings">Settings</string>
     <string name="calendar">Calendar</string>
     <string name="featuredcontent">Featured Content</string>
@@ -18,23 +18,20 @@
     <string name="Advanced">Advanced</string>
     <string name="eventcat">Events Category</string>
 	<string name="createAccountText"><u>Create Account</u></string>
-	<string name="icupWelcomeText">Welcome to lokalite mobile! Here you\'ll find a 
+	<string name="lokaliteWelcomeText">Welcome to Lokalite Mobile! Here you\'ll find a 
 				tutorial on the application as well as the background on the company.</string>
-	<string name="icupInfoText">\nlokalite is a small, Boulder-based, startup company specializing
-	in the distribution of information and advertisements. lokalite plans to showcase events and 
-	organization profiles of local businesses within the community. For the time being, the company
-	plans on targeting the Boulder community for its clients. The events and organizations advertised 
-	through lokalite will be from Boulder. lokalite will expand to cover events and organizations 
-	to other cities and states.\n\n
-	Through lokalite mobile! users are able to access an Events List, Organizations List, and a 
-	Featured Content from the lokalite server. The Events List and Organizations List is
+	<string name="lokaliteInfoText">\nLokalite is a small, Boulder-based, startup company specializing
+	in the distribution of information and advertisements. Lokalite plans to showcase events and 
+	organization profiles of local businesses within the community.\n\n
+	Through Lokalite Mobile! users are able to access an Events List, Organizations List, and a 
+	Featured Content from the Lokalite server. The Events List and Organizations List is
 	organized into categories and allows for users to search through by various criterion: location, 
 	date, and time. The Featured Content displays either a featured Event or Organization and is 
-	updated on a daily basis. lokalite mobile! also features a Favorites List, allowing users to add 
+	updated on a daily basis. Lokalite Mobile! also features a Favorites List, allowing users to add 
 	and remove Events, Organizations, and Featured content to and from it. Users will be able to map 
 	all Events, Organizations, and Featured Content with Google Maps. Users will also be able to set
 	notifications (i.e. vibrate or play a sound) which will alert the user of an upcoming Event.\n </string>
 	
-	<string name="linktolokalite"> Check out <a href="http://www.lokalite.com"> lokalite\'s website</a> for more details and features! </string>
+	<string name="linktolokalite">Check out <a href="http://www.lokalite.com">Lokalite\'s website</a> for more details and features!</string>
 
 </resources>
