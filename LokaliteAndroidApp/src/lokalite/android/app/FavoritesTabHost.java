@@ -43,7 +43,7 @@ public class FavoritesTabHost extends LokaliteListActivity {
 	private Runnable viewFavorites;
 
 	private EventAdapter myEventAdapter;
-	private BusinessAdapter myBusinessAdapter;
+	private OrganizationAdapter myBusinessAdapter;
 
 
 	private TabHost tabHost;
@@ -120,7 +120,7 @@ public class FavoritesTabHost extends LokaliteListActivity {
 
 		// Initialize the list of business items
 		favOrgs = new ArrayList<OrganizationDTO>();
-		myBusinessAdapter = new BusinessAdapter(this, this, R.layout.businessitem, favOrgs, true);
+		myBusinessAdapter = new OrganizationAdapter(this, this, R.layout.businessitem, favOrgs, true);
 		
 		// Create the viewEvents Runnable object.
 		// Make it Runnable so it can be run again in case events want to be updated, etc. 
@@ -148,7 +148,7 @@ public class FavoritesTabHost extends LokaliteListActivity {
 		// Forgetting to do so will cause the application to crash.
 		
 		Intent leftIntent = new Intent(this, EventsCat.class);
-		Intent rightIntent = new Intent(this, BusinessCat.class);
+		Intent rightIntent = new Intent(this, OrganizationCat.class);
 		enableSwipe(leftIntent, rightIntent);
 		
 		

@@ -19,7 +19,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -52,8 +51,6 @@ public class EventTabHost extends LokaliteListActivity {
 	private boolean searchOn = false;
 	private Date end = new Date();
 	private Date start = new Date();
-	private DatePicker endDate ;
-	private TimePicker eventTime;
 	//Debug w/ log file
 	private static String TAG = "EventsTabHost";
 
@@ -300,7 +297,6 @@ public class EventTabHost extends LokaliteListActivity {
 	 */
 	private void getEvents()
 	{
-
 		// Local variables for checking for program-terminating errors.
 		int i;  
 		Date date = new java.util.Date();

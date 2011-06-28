@@ -39,7 +39,7 @@ public class LokaliteNotification extends BroadcastReceiver {
 			}
 			else
 			{
-				contentIntent = PendingIntent.getActivity(context, 0, new Intent(context, BusinessCat.class), 0);
+				contentIntent = PendingIntent.getActivity(context, 0, new Intent(context, OrganizationCat.class), 0);
 			}
 
 			Notification notification = new Notification(

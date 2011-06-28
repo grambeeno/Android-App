@@ -21,7 +21,7 @@ public class About extends LokaliteActivity{
 	private ImageView myImgView; 
 	private ImageView myLogo;
 
-	//Setting images for screenshot
+	//Setting images for screenshots
 	private Integer[] ImgID = {
 			R.drawable.intro_about, 
 			R.drawable.mainmenu_about,

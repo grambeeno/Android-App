@@ -66,7 +66,7 @@ public class LokaliteAndroidMain extends LokaliteActivity {
                 	startActivityIfNeeded(eventTabHost, myReqCode);
             		break;
             	case 2:
-            		Intent business = new Intent(v.getContext(), BusinessCat.class);
+            		Intent business = new Intent(v.getContext(), OrganizationCat.class);
                 	startActivityIfNeeded(business, myReqCode);
             		break;
             	case 3:

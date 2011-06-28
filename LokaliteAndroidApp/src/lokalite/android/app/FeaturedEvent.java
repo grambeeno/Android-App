@@ -38,7 +38,7 @@ public class FeaturedEvent extends LokaliteActivity {
         // For swiping
         // You MUST set the intent to the left and right of this current activity/view
         // Forgetting to do so will cause the application to crash.
-        Intent leftIntent = new Intent(this, BusinessCat.class);
+        Intent leftIntent = new Intent(this, OrganizationCat.class);
     	Intent rightIntent = new Intent(this, EventsCat.class);
         enableSwipe(leftIntent, rightIntent);
         

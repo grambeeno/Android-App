@@ -4,7 +4,6 @@ package lokalite.android.app;
 import java.util.ArrayList;
 
 import android.app.AlarmManager;
-import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -18,7 +17,7 @@ public class EventsCat extends LokaliteListActivity {
 
 	/*
 	 * Creates a new EventCat activity including swiping
-	 *  (non-Javadoc)
+	 * 
 	 * @see lokalite.android.app.LokaliteListActivity#onCreate(android.os.Bundle)
 	 */
 	@Override
@@ -48,7 +47,7 @@ public class EventsCat extends LokaliteListActivity {
 			public void onItemClick(AdapterView<?> a, View v, int position, long id) {
 				Intent intent = new Intent(v.getContext(), EventTabHost.class);
 				intent.putExtra("cat", (String) getListView().getItemAtPosition(position));
-				PendingIntent pendingIntent = PendingIntent.getBroadcast(v.getContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+				//PendingIntent pendingIntent = PendingIntent.getBroadcast(v.getContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 				startActivityIfNeeded(intent, defaultIntentCode);
 				overridePendingTransition(R.anim.slide_left_in, R.anim.slide_left_out);
 			}
@@ -57,7 +56,7 @@ public class EventsCat extends LokaliteListActivity {
 
 	/* 
 	 * Handles "Content changes' such as rotating the device or deploying the keyboard
-	 * (non-Javadoc)
+	 * 
 	 * @see android.app.ListActivity#onContentChanged()
 	 */
 	@Override

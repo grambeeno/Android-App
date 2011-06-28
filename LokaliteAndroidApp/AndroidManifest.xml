@@ -28,8 +28,8 @@
 		<!-- These are the other activities of Lokalite's Android App -->
 		<activity android:name=".Settings" android:label="@string/settings" android:launchMode="singleTop" android:configChanges="orientation"></activity>
 		<activity android:name=".FeaturedEvent" android:label="@string/featuredcontent" android:launchMode="singleTop" android:configChanges="orientation|screenLayout|keyboardHidden"></activity>
-		<activity android:name=".BusinessCat" android:label="@string/organizationcat" android:launchMode="singleTop"></activity>
-		<activity android:name=".BusinessTabHost" android:label="@string/organizationdir" android:launchMode="singleTop" android:configChanges="orientation|screenLayout|keyboardHidden"></activity>
+		<activity android:name=".OrganizationCat" android:label="@string/organizationcat" android:launchMode="singleTop"></activity>
+		<activity android:name=".OrganizationTabHost" android:label="@string/organizationdir" android:launchMode="singleTop" android:configChanges="orientation|screenLayout|keyboardHidden"></activity>
 		<activity android:name=".EventTabHost" android:label="@string/eventlist" android:launchMode="singleTop" android:configChanges="orientation|screenLayout|keyboardHidden"></activity>
 		<activity android:name=".About" android:label="@string/about" android:launchMode="singleTop" android:configChanges="orientation|screenLayout|keyboardHidden"></activity>
 		<activity android:name=".Mapper" android:theme="@android:style/Theme.NoTitleBar" android:launchMode="singleTop" android:configChanges="orientation|screenLayout|keyboardHidden"></activity>

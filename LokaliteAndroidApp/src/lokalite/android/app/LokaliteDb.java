@@ -84,13 +84,6 @@ public class LokaliteDb extends SQLiteOpenHelper {
         + "business_update_time bigint not null,"
         + "category text not null);";
     
-    /**
-     * Database creation sql statement
-     */
-    private static final String DATABASE_CREATE =
-        TABLE_CREATE_EVENTS +";"+ TABLE_CREATE_BUSINESS + ";" + TABLE_CREATE_FEATURED + ";" + TABLE_CREATE_FAVBUSINESS + ";"
-        + TABLE_CREATE_FAVEVENTS + ";"+ TABLE_CREATE_UPDATEEVENTS + ";" + TABLE_CREATE_UPDATEORG + ";" ;
-
     private static final String DATABASE_NAME = "data";
     private static final String TABLE_EVENTS = "events";
     private static final String TABLE_BUSINESS = "business";
@@ -102,7 +95,7 @@ public class LokaliteDb extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 114;
 
    
-    private final Context mCtx;
+    //private final Context mCtx;
 
         @Override
         /**
@@ -159,7 +152,7 @@ public class LokaliteDb extends SQLiteOpenHelper {
       	  e1.printStackTrace();  
         }
 
-    	this.mCtx = ctx;
+    	//this.mCtx = ctx;
     }
 
     /**
@@ -817,8 +810,7 @@ public class LokaliteDb extends SQLiteOpenHelper {
     		for(int i = 0; i< count; i++){
     			Log.i("LokaliteDb", "Current time: " + start.getTime() + "End Date: " + mCursor.getLong(mCursor.getColumnIndex(KEY_END_DATE)) 
     					+ "Row ID: " + mCursor.getInt(mCursor.getColumnIndex(KEY_ROWID)));
-				int deleted = getmDb().delete(TABLE_EVENTS, KEY_ROWID + "==" + mCursor.getInt(mCursor.getColumnIndex(KEY_ROWID)), null);  
-			    
+				
 				getmDb().delete(TABLE_EVENTS, KEY_ROWID + "=" + mCursor.getInt(mCursor.getColumnIndex(KEY_ROWID)), null);
 				mCursor.moveToNext();
 
@@ -1167,5 +1159,3 @@ public class LokaliteDb extends SQLiteOpenHelper {
     }
     
 }
-	
-

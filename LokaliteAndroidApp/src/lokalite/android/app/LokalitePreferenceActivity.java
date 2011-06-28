@@ -87,7 +87,7 @@ public class LokalitePreferenceActivity extends PreferenceActivity  {
         	  startActivityIfNeeded(events, defaultIntentCode);
             return true;
         case R.id.organizations:
-        	Intent organizations = new Intent(this, BusinessCat.class);
+        	Intent organizations = new Intent(this, OrganizationCat.class);
         	  startActivityIfNeeded(organizations, defaultIntentCode);
             return true;
         case R.id.favorites:

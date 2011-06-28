@@ -1,6 +1,7 @@
 package lokalite.android.app;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -47,7 +48,6 @@ public class LokaliteListActivity extends ListActivity {
 	// For storing preferences
 	SharedPreferences preferences;
 	Location myLocation = new Location(LOCATION_SERVICE);
-	private LocationManager lm;
 
 	// custom array adapter for inserting custom list items 
 	protected ArrayAdapter myAdapter;
@@ -120,7 +120,8 @@ public class LokaliteListActivity extends ListActivity {
 			} catch (Exception e) {
 			}
 		}
-		if(!isOnline()){
+		else
+		{
 			LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 			Criteria crit = new Criteria();
 			crit.setAccuracy(Criteria.ACCURACY_FINE);
@@ -189,7 +190,7 @@ public class LokaliteListActivity extends ListActivity {
 			startActivityIfNeeded(events, defaultIntentCode);
 			return true;
 		case R.id.organizations:
-			Intent organizations = new Intent(this, BusinessCat.class);
+			Intent organizations = new Intent(this, OrganizationCat.class);
 			startActivityIfNeeded(organizations, defaultIntentCode);
 			return true;
 		case R.id.favorites:
@@ -235,7 +236,7 @@ public class LokaliteListActivity extends ListActivity {
 	class MyGestureDetector extends SimpleOnGestureListener {
 		/*
 		 * Handles fling events (swiping)
-		 *  (non-Javadoc)
+		 * 
 		 * @see android.view.GestureDetector.SimpleOnGestureListener#onFling(android.view.MotionEvent, android.view.MotionEvent, float, float)
 		 */
 		@Override
@@ -336,7 +337,7 @@ public class LokaliteListActivity extends ListActivity {
 	}
 
 	/**
-	 * Updates the currnet list by clearing all items 
+	 * Updates the current list by clearing all items 
 	 * and re adding them.
 	 * @param <T>
 	 * @param newList
@@ -371,6 +372,55 @@ public class LokaliteListActivity extends ListActivity {
 					myAdapter.add(newList.get(i));
 				}
 			}
+			
+			Comparator locationDistComparator = new Comparator<T>() {
+				@Override
+				public int compare(T locationOne, T locationTwo) {
+					float[] resultsOne = new float[3];
+					float[] resultsTwo = new float[3];
+					
+					if (locationOne.getLat() != null && locationOne.getLon() != null && locationTwo.getLat() != null && locationTwo.getLon() != null)  
+					{
+						Location.distanceBetween(myLocation.getLatitude(), myLocation.getLongitude(), locationOne.getLat(), locationOne.getLon(), resultsOne);
+						Location.distanceBetween(myLocation.getLatitude(), myLocation.getLongitude(), locationTwo.getLat(), locationTwo.getLon(), resultsTwo);
+						
+						if (resultsOne != null && resultsTwo != null)
+						{
+							if (resultsOne[0] < resultsTwo[0])
+							{
+								return -1;
+							}
+							else if (resultsOne[0] > resultsTwo[0])
+							{
+								return 1;
+							}
+							else 
+							{
+								return 0;
+							}
+						}
+						else if (resultsOne != null && resultsTwo == null)
+						{
+							return 1;
+						}
+						else
+						{
+							return -1;
+						}
+					}
+					else if (locationOne.getLat() != null && locationOne.getLon() != null)
+					{
+						return 1;
+					}
+					else if (locationTwo.getLat() != null && locationTwo.getLon() != null)
+					{
+						return -1;
+					}
+					
+					return 0;
+				}
+			};
+			myAdapter.sort(locationDistComparator);
 		}
 		
 		myAdapter.notifyDataSetChanged();

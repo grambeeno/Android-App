@@ -2,10 +2,7 @@ package lokalite.android.app;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.text.Format;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 
 import org.codehaus.jackson.JsonGenerationException;
@@ -14,10 +11,9 @@ import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.TypeReference;
 
+import android.content.Context;
 import android.net.ConnectivityManager;
 import android.util.Log;
-import android.content.Context;
-//import android.database.sqlite.SQLiteDatabase;
 
 import com.blueduck.collegepedia.dto.EventDTO;
 import com.blueduck.collegepedia.dto.OrganizationDTO;
@@ -509,7 +505,7 @@ public class DataManager {
 
 				//Inserting DTOs into database
 				if(t != null){
-					long row_id = db.createRows(t, JSONString);
+					db.createRows(t, JSONString);
 				}
 				JSONString.close();
 			} 
@@ -528,7 +524,7 @@ public class DataManager {
 			}
 
 			if(t != null){
-				long row_id = db.createRows(t, JSONString);
+				db.createRows(t, JSONString);
 			}
 			//update the stored time in db
 			db.createUpdateTimeEvents(cat, currentTime.getTime());
