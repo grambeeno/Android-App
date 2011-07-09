@@ -17,6 +17,7 @@ import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.EditText;
@@ -79,7 +80,12 @@ public class OrganizationTabHost extends LokaliteListActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState); 
         setContentView(R.layout.businesshost);
-  
+        
+        // Set the title layout and text
+        getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.lokaliteheader);
+        lokaliteTitle = (TextView) findViewById(R.id.lokalitetitle);
+        this.lokaliteTitle.setText("Organizations");
+        
         Bundle extras = getIntent().getExtras();
         
         // Get the category passed from BusinessCat

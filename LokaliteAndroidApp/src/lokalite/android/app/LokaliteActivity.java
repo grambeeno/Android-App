@@ -8,13 +8,15 @@ import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.GestureDetector;
+import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.GestureDetector.SimpleOnGestureListener;
+import android.view.Window;
+import android.widget.TextView;
 
 /**
  * 
@@ -44,6 +46,8 @@ public class LokaliteActivity extends Activity  {
 	protected boolean connected;
 	protected DataManager dm;
 	
+	protected TextView lokaliteTitle;
+	
 	/* 
 	 * Creates a new Lokalite activity. Loads stored preferences 
 	 * Sets up swiping between activities and checks phone connectivity
@@ -53,6 +57,7 @@ public class LokaliteActivity extends Activity  {
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		dm = new DataManager(this);
+		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
 		
 		// Initialize preferences
 		preferences = PreferenceManager.getDefaultSharedPreferences(this);

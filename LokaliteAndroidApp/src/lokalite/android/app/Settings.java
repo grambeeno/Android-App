@@ -2,6 +2,8 @@ package lokalite.android.app;
 
 import android.os.Bundle;
 import android.preference.PreferenceCategory;
+import android.view.Window;
+import android.widget.TextView;
 
 /**
  * 
@@ -19,6 +21,11 @@ public class Settings extends LokalitePreferenceActivity
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.preferences);
+        
+        // Set the title layout and text
+        getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.lokaliteheader);
+        lokaliteTitle = (TextView) findViewById(R.id.lokalitetitle);
+        this.lokaliteTitle.setText("Settings");
         
         PreferenceCategory myCategory = (PreferenceCategory) findPreference("notifications");
         myCategory.removePreference(findPreference("lastUpdated"));

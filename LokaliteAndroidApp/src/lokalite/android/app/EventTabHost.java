@@ -17,6 +17,7 @@ import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.DatePicker;
@@ -79,8 +80,12 @@ public class EventTabHost extends LokaliteListActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
 		setContentView(R.layout.eventhost);
+		
+		// Set the title layout and text
+		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.lokaliteheader);
+        lokaliteTitle = (TextView) findViewById(R.id.lokalitetitle);
+        this.lokaliteTitle.setText("Events");
 
 		curSelection = null;
 

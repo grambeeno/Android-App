@@ -29,8 +29,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 
 import com.blueduck.collegepedia.dto.ParentDTO;
 
@@ -48,26 +50,24 @@ public class LokaliteListActivity extends ListActivity {
 	// For storing preferences
 	SharedPreferences preferences;
 	Location myLocation = new Location(LOCATION_SERVICE);
-
-	// custom array adapter for inserting custom list items 
-	protected ArrayAdapter myAdapter;
-	protected final int defaultIntentCode = 0;
+	
 	private static final int SWIPE_MIN_DISTANCE = 50;
 	private static final int SWIPE_MAX_OFF_PATH = 100;
 	private static final int SWIPE_THRESHOLD_VELOCITY = 200;
-
-	// custom gesture detector 
+	
 	private GestureDetector gestureDetector;
 	View.OnTouchListener gestureListener;
 	private Intent leftIntent;
 	private Intent rightIntent;
+	
+	protected ArrayAdapter myAdapter;
+	protected final int defaultIntentCode = 0;
 	protected boolean connected;
 	protected AlarmManager am;
 	protected DataManager dm;
-
 	protected PopupWindow popup;
-
 	protected Thread thread;
+	protected TextView lokaliteTitle;
 	
 	/* 
 	 * Catches configuration changes from the phone such as keyboard and rotation events
@@ -98,8 +98,9 @@ public class LokaliteListActivity extends ListActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
 		dm = new DataManager(this);
+		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
+		
 		am = (AlarmManager) getSystemService(ALARM_SERVICE);
 
 		// Initialize preferences

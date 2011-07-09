@@ -10,7 +10,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
 import android.view.GestureDetector.SimpleOnGestureListener;
+import android.widget.TextView;
 
 /**
  * 
@@ -23,7 +25,6 @@ import android.view.GestureDetector.SimpleOnGestureListener;
  */
 public class LokalitePreferenceActivity extends PreferenceActivity  {
 	
-	protected final int defaultIntentCode = 0;  
 	private static final int SWIPE_MIN_DISTANCE = 50;
 	private static final int SWIPE_MAX_OFF_PATH = 100;
 	private static final int SWIPE_THRESHOLD_VELOCITY = 200;
@@ -31,6 +32,9 @@ public class LokalitePreferenceActivity extends PreferenceActivity  {
 	View.OnTouchListener gestureListener;
 	private Intent leftIntent;
 	private Intent rightIntent;
+	
+	protected final int defaultIntentCode = 0;
+	protected TextView lokaliteTitle;
 	
 	/* 
 	 * Creates a new preference activity
@@ -42,6 +46,7 @@ public class LokalitePreferenceActivity extends PreferenceActivity  {
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
 		
 		gestureListener = new View.OnTouchListener() {
             public boolean onTouch(View v, MotionEvent event) {
