@@ -27,7 +27,6 @@
 		
 		<!-- These are the other activities of Lokalite's Android App -->
 		<activity android:name=".Settings" android:label="@string/settings" android:launchMode="singleTop" android:configChanges="orientation" android:theme="@style/CustomTheme"></activity>
-		<activity android:name=".FeaturedEvent" android:label="@string/featuredcontent" android:launchMode="singleTop" android:configChanges="orientation|screenLayout|keyboardHidden"></activity>
 		<activity android:name=".OrganizationCat" android:label="@string/organizationcat" android:launchMode="singleTop" android:theme="@style/CustomTheme"></activity>
 		<activity android:name=".OrganizationTabHost" android:label="@string/organizationdir" android:launchMode="singleTop" android:configChanges="orientation|screenLayout|keyboardHidden" android:theme="@style/CustomTheme"></activity>
 		<activity android:name=".EventsCat" android:label="@string/eventcat" android:launchMode="singleTop" android:theme="@style/CustomTheme"></activity>

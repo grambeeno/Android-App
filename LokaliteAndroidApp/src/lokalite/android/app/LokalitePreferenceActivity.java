@@ -83,10 +83,6 @@ public class LokalitePreferenceActivity extends PreferenceActivity  {
         	Intent mainPage = new Intent(this, LokaliteAndroidMain.class);
         	startActivityIfNeeded(mainPage, defaultIntentCode);
             return true;
-        case R.id.featuredevent:
-        	Intent featuredEvent = new Intent(this, FeaturedEvent.class);
-        	startActivityIfNeeded(featuredEvent, defaultIntentCode);
-            return true;
         case R.id.events:
         	Intent events = new Intent(this, EventsCat.class);
         	  startActivityIfNeeded(events, defaultIntentCode);

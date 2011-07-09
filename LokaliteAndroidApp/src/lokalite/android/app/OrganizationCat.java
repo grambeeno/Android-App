@@ -37,7 +37,7 @@ public class OrganizationCat extends LokaliteListActivity {
         // You MUST set the intent to the left and right of this current activity/view
         // Forgetting to do so will cause the application to crash.
 	    Intent leftIntent = new Intent(this, FavoritesTabHost.class);
-        Intent rightIntent = new Intent(this, FeaturedEvent.class);
+        Intent rightIntent = new Intent(this, EventsCat.class);
         enableSwipe(leftIntent, rightIntent);
         
         // Initialize the list of business items

@@ -50,13 +50,12 @@ public class LokaliteAndroidMain extends LokaliteActivity {
         // 3 4 5
         // 6 7 8
         // etc.
-        // 
-        // 0 - Featured Event 
-        // 1 - Event Tab Host
-        // 2 - Business Tab Host
-        // 3 - Favorites
-        // 4 - Settings
-        // 5 - About
+        //  
+        // 0 - Event Tab Host
+        // 1 - Business Tab Host
+        // 2 - Favorites
+        // 3 - Settings
+        // 4 - About
         gridview.setOnItemClickListener(new OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
             	int myReqCode = 0;
@@ -64,26 +63,22 @@ public class LokaliteAndroidMain extends LokaliteActivity {
             	switch (position)
             	{
             	case 0:
-            		Intent featuredEvent = new Intent(v.getContext(), FeaturedEvent.class);
-                	startActivityIfNeeded(featuredEvent, myReqCode);
-            		break;
-            	case 1:
             		Intent eventTabHost = new Intent(v.getContext(), EventsCat.class);
                 	startActivityIfNeeded(eventTabHost, myReqCode);
             		break;
-            	case 2:
+            	case 1:
             		Intent business = new Intent(v.getContext(), OrganizationCat.class);
                 	startActivityIfNeeded(business, myReqCode);
             		break;
-            	case 3:
+            	case 2:
             		Intent favorites = new Intent(v.getContext(), FavoritesTabHost.class);
                 	startActivityIfNeeded(favorites, myReqCode);
             		break;
-            	case 4:
+            	case 3:
             		Intent settings = new Intent(v.getContext(), Settings.class);
                 	startActivityIfNeeded(settings, myReqCode);
             		break;
-            	case 5: 
+            	case 4: 
             		Intent about = new Intent(v.getContext(), About.class); 
             		startActivityIfNeeded(about, myReqCode);
             	}
@@ -139,9 +134,9 @@ public class LokaliteAndroidMain extends LokaliteActivity {
 
         // references to our images
         private Integer[] mThumbIds = {
-                R.drawable.featured, R.drawable.events,
-                R.drawable.organizations, R.drawable.favorites,
-                R.drawable.settings, R.drawable.about
+                R.drawable.events, R.drawable.organizations,
+                R.drawable.favorites, R.drawable.settings,
+                R.drawable.about
         };
     }
 }
