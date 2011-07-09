@@ -72,7 +72,7 @@ public class LokaliteAndroidMain extends LokaliteActivity {
                 	startActivityIfNeeded(business, myReqCode);
             		break;
             	case 2:
-            		Intent favorites = new Intent(v.getContext(), FavoritesTabHost.class);
+            		Intent favorites = new Intent(v.getContext(), ProfileTabHost.class);
                 	startActivityIfNeeded(favorites, myReqCode);
             		break;
             	case 3:

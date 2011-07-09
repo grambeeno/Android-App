@@ -137,7 +137,7 @@ public class LokaliteActivity extends Activity  {
         	  startActivityIfNeeded(organizations, defaultIntentCode);
             return true;
         case R.id.favorites:
-        	Intent favorites = new Intent(this, FavoritesTabHost.class);
+        	Intent favorites = new Intent(this, ProfileTabHost.class);
         	  startActivityIfNeeded(favorites, defaultIntentCode);
             return true;
         case R.id.settings:

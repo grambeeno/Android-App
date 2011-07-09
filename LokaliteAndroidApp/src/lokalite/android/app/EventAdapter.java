@@ -58,7 +58,7 @@ public class EventAdapter extends ArrayAdapter<EventDTO>
                 		v = vi.inflate(R.layout.eventitem, null);
                 		break;
                 	case FAVORITE:
-                		v = vi.inflate(R.layout.faveventitem, null);
+                		v = vi.inflate(R.layout.profileeventitem, null);
                 		break;
                 }      
             

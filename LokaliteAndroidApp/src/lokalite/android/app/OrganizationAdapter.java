@@ -41,7 +41,7 @@ public class OrganizationAdapter extends ArrayAdapter<OrganizationDTO>
             if (v == null) {
                 LayoutInflater vi = (LayoutInflater)parentActivity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 if(this.isFavs == true){
-                	v = vi.inflate(R.layout.favbusinessitem, null);	
+                	v = vi.inflate(R.layout.profilebusinessitem, null);	
                 }
                 else{
                 	v = vi.inflate(R.layout.businessitem, null);
