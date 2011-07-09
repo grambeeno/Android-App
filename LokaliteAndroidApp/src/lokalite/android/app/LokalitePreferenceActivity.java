@@ -45,9 +45,9 @@ public class LokalitePreferenceActivity extends PreferenceActivity  {
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
-		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
 		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.lokaliteheader);
+		super.onCreate(savedInstanceState);
 		
 		gestureListener = new View.OnTouchListener() {
             public boolean onTouch(View v, MotionEvent event) {
