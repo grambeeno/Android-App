@@ -31,7 +31,7 @@
 		<activity android:name=".OrganizationTabHost" android:label="@string/organizationdir" android:launchMode="singleTop" android:configChanges="orientation|screenLayout|keyboardHidden" android:theme="@style/CustomTheme"></activity>
 		<activity android:name=".EventsCat" android:label="@string/eventcat" android:launchMode="singleTop" android:theme="@style/CustomTheme"></activity>
 		<activity android:name=".EventTabHost" android:label="@string/eventlist" android:launchMode="singleTop" android:configChanges="orientation|screenLayout|keyboardHidden" android:theme="@style/CustomTheme"></activity>
-		<activity android:name=".About" android:label="@string/about" android:launchMode="singleTop" android:configChanges="orientation|screenLayout|keyboardHidden"></activity>
+		<activity android:name=".About" android:label="@string/about" android:launchMode="singleTop" android:configChanges="orientation|screenLayout|keyboardHidden" android:theme="@style/CustomTheme"></activity>
 		<activity android:name=".Mapper" android:theme="@android:style/Theme.NoTitleBar" android:launchMode="singleTop" android:configChanges="orientation|screenLayout|keyboardHidden"></activity>
 		<activity android:name=".FavoritesTabHost" android:label="@string/favorites" android:launchMode="singleTop" android:configChanges="orientation|screenLayout|keyboardHidden" android:theme="@style/CustomTheme"></activity>
 		<receiver android:name=".LokaliteNotification" />

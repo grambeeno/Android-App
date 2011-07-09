@@ -9,10 +9,12 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Gallery;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 /** About: Lists general information about the Lokalite Android Application **/
 public class About extends LokaliteActivity{
@@ -83,12 +85,10 @@ public class About extends LokaliteActivity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.abouthost);
 
-		//Setting up tabs
-		/*
-        TabHost tabHost = (TabHost) this.findViewById(R.id.abouttabhost);
-        doTabSetup(tabHost); 
-        tabHost.setCurrentTab(0);
-		 */
+		// Set the title layout and text
+        getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.lokaliteheader);
+        lokaliteTitle = (TextView) findViewById(R.id.lokalitetitle);
+        this.lokaliteTitle.setText("About");
 
 		//Disable tutorial view
 		findViewById(R.id.thumbnailgallery).setVisibility(View.GONE);
