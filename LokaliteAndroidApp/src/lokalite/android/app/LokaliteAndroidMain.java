@@ -38,6 +38,7 @@ public class LokaliteAndroidMain extends LokaliteActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
+        // Set the title layout and text
         getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.lokaliteheader);
         lokaliteTitle = (TextView) findViewById(R.id.lokalitetitle);
         this.lokaliteTitle.setText("Lokalite");

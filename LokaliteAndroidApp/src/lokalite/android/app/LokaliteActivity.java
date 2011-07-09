@@ -58,6 +58,7 @@ public class LokaliteActivity extends Activity  {
 		super.onCreate(savedInstanceState);
 		dm = new DataManager(this);
 		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
+		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.lokaliteheader);
 		
 		// Initialize preferences
 		preferences = PreferenceManager.getDefaultSharedPreferences(this);

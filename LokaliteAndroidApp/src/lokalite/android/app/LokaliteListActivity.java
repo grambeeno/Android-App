@@ -100,6 +100,7 @@ public class LokaliteListActivity extends ListActivity {
 		super.onCreate(savedInstanceState);
 		dm = new DataManager(this);
 		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
+		getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.lokaliteheader);
 		
 		am = (AlarmManager) getSystemService(ALARM_SERVICE);
 
