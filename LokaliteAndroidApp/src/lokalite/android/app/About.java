@@ -83,10 +83,10 @@ public class About extends LokaliteActivity{
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
 		setContentView(R.layout.abouthost);
 
 		// Set the title layout and text
-		requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
         getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.lokaliteheader);
         lokaliteTitle = (TextView) findViewById(R.id.lokalitetitle);
         this.lokaliteTitle.setText("About");

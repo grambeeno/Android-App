@@ -36,10 +36,10 @@ public class LokaliteAndroidMain extends LokaliteActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
         setContentView(R.layout.main);
         
         // Set the title layout and text
-        requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
         getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.lokaliteheader);
         lokaliteTitle = (TextView) findViewById(R.id.lokalitetitle);
         this.lokaliteTitle.setText("Lokalite");
@@ -57,7 +57,6 @@ public class LokaliteAndroidMain extends LokaliteActivity {
         // 1 - Business Tab Host
         // 2 - Favorites
         // 3 - Settings
-        // 4 - About
         gridview.setOnItemClickListener(new OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
             	int myReqCode = 0;
@@ -80,9 +79,6 @@ public class LokaliteAndroidMain extends LokaliteActivity {
             		Intent settings = new Intent(v.getContext(), Settings.class);
                 	startActivityIfNeeded(settings, myReqCode);
             		break;
-            	case 4: 
-            		Intent about = new Intent(v.getContext(), About.class); 
-            		startActivityIfNeeded(about, myReqCode);
             	}
             	
             }
@@ -138,7 +134,6 @@ public class LokaliteAndroidMain extends LokaliteActivity {
         private Integer[] mThumbIds = {
                 R.drawable.events, R.drawable.organizations,
                 R.drawable.favorites, R.drawable.settings,
-                R.drawable.about
         };
     }
 }
