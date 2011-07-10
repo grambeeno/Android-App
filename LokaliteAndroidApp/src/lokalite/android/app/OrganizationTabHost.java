@@ -79,7 +79,7 @@ public class OrganizationTabHost extends LokaliteListActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState); 
-        setContentView(R.layout.businesshost);
+        setContentView(R.layout.organizationhost);
         
         // Set the title layout and text
         getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.lokaliteheader);
@@ -98,7 +98,7 @@ public class OrganizationTabHost extends LokaliteListActivity {
      
         // Initialize the list of business items
         myBusinesses = new ArrayList<OrganizationDTO>();
-        myAdapter = new OrganizationAdapter(this, this, R.layout.businessitem, myBusinesses, false);
+        myAdapter = new OrganizationAdapter(this, this, R.layout.organizationitem, myBusinesses, false);
         setListAdapter(myAdapter);
         // Create the viewEvents Runnable object.
         // Make it Runnable so it can be run again in case events want to be updated, etc. 
@@ -140,7 +140,7 @@ public class OrganizationTabHost extends LokaliteListActivity {
             
             public void onItemClick(AdapterView<?> a, View v, int position, long id) {
                 LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                v = inflater.inflate(R.layout.businesspopup, null);
+                v = inflater.inflate(R.layout.organizationpopup, null);
                 
                 int popupHeight = (int) (getApplicationContext().getResources().getDisplayMetrics().heightPixels) - 25;
                 int popupWidth = (int) (getApplicationContext().getResources().getDisplayMetrics().widthPixels);

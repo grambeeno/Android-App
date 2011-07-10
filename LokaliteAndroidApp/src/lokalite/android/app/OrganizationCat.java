@@ -24,7 +24,7 @@ public class OrganizationCat extends LokaliteListActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
-	    setContentView(R.layout.businesscat);
+	    setContentView(R.layout.organizationcat);
 	    
 	    // Set the title layout and text
 	    getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.lokaliteheader);

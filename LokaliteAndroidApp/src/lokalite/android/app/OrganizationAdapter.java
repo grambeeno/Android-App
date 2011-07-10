@@ -44,7 +44,7 @@ public class OrganizationAdapter extends ArrayAdapter<OrganizationDTO>
                 	v = vi.inflate(R.layout.profilebusinessitem, null);	
                 }
                 else{
-                	v = vi.inflate(R.layout.businessitem, null);
+                	v = vi.inflate(R.layout.organizationitem, null);
                 }                    
             }
             OrganizationDTO o = items.get(position);

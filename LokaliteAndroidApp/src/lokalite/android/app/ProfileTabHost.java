@@ -126,7 +126,7 @@ public class ProfileTabHost extends LokaliteListActivity {
 
 		// Initialize the list of business items
 		favOrgs = new ArrayList<OrganizationDTO>();
-		myBusinessAdapter = new OrganizationAdapter(this, this, R.layout.businessitem, favOrgs, true);
+		myBusinessAdapter = new OrganizationAdapter(this, this, R.layout.organizationitem, favOrgs, true);
 		
 		// Create the viewEvents Runnable object.
 		// Make it Runnable so it can be run again in case events want to be updated, etc. 
