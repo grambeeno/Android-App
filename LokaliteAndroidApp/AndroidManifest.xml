@@ -17,7 +17,7 @@
 		<uses-library android:name="com.google.android.maps" />
 		
 		<!-- This is the default starting activity of Lokalite's Android App -->
-		<activity android:name=".LokaliteAndroidMain" android:label="@string/app_name" android:launchMode="singleTop" android:theme="@style/CustomTheme">
+		<activity android:name=".LokaliteHomePage" android:label="Lokalite" android:launchMode="singleTop">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />
@@ -26,6 +26,7 @@
 		</activity>
 		
 		<!-- These are the other activities of Lokalite's Android App -->
+		<activity android:name=".LokaliteAndroidMain" android:label="@string/app_name" android:launchMode="singleTop" android:theme="@style/CustomTheme"></activity>
 		<activity android:name=".Settings" android:label="@string/settings" android:launchMode="singleTop" android:configChanges="orientation" android:theme="@style/CustomTheme"></activity>
 		<activity android:name=".OrganizationCat" android:label="@string/organizationcat" android:launchMode="singleTop" android:theme="@style/CustomTheme"></activity>
 		<activity android:name=".OrganizationTabHost" android:label="@string/organizationdir" android:launchMode="singleTop" android:configChanges="orientation|screenLayout|keyboardHidden" android:theme="@style/CustomTheme"></activity>

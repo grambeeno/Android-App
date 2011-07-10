@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/profiletabhost"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="5dp">
+        
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0" />
+        
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp" 
+            android:layout_weight="1">
+            
+            <!-- Profile Event/Organization List -->
+            <LinearLayout
+            	android:id="@+id/profilelisttab"
+  				xmlns:android="http://schemas.android.com/apk/res/android"
+  				android:orientation="vertical"
+  				android:layout_width="fill_parent"
+  				android:layout_height="fill_parent">
+			
+				<ListView
+					android:id="@android:id/list"
+					android:layout_width="fill_parent"
+        			android:layout_height="fill_parent"
+    			/>
+			  
+    			<TextView  
+    				android:id="@android:id/empty"
+    				android:layout_width="fill_parent" 
+    				android:layout_height="wrap_content" 
+    				android:text="@string/emptylist"
+    			/>
+			</LinearLayout>
+			
+			<!-- Profile Search -->
+			<RelativeLayout
+				android:id="@+id/profilesearch"
+  				xmlns:android="http://schemas.android.com/apk/res/android"
+  				android:layout_width="fill_parent"
+  				android:layout_height="fill_parent"
+  				>
+				<ImageButton
+					android:id="@+id/profileSearchButton"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentRight="true"
+					android:src="@android:drawable/ic_search_category_default"
+					android:onClick="searchButtonClicked"
+				/>
+				<EditText
+					android:id="@+id/profileSearchText"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:hint="Event Title"
+					android:layout_toLeftOf="@id/profileSearchButton"
+				/>
+				
+				<!--  Radio Button for Search -->
+				<RadioGroup
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:orientation="horizontal"
+					android:id="@+id/profileRadioGroup"
+					android:layout_below="@id/profileSearchText"
+				>
+				<RadioButton 
+					android:checked="true"
+					android:id="@+id/profileeventsRB"
+					android:text="My Events"
+					android:layout_below="@id/profileSearchText"
+					android:onClick="profileeventsRBClicked"
+					/>
+				<RadioButton
+					android:checked="false"
+					android:id="@+id/profileorgsRB"
+					android:text="My Orgs"
+					android:layout_toRightOf="@id/profileeventsRB"
+					android:onClick="profileorgsRBClicked"
+					/>
+				</RadioGroup>
+				
+				
+				<ScrollView android:id="@+id/profileSearchScrollView"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/profileRadioGroup"
+				>
+				<!-- Profile Orgs Advanced Search -->
+				<RelativeLayout
+				android:id="@+id/profileOrgsAdvancedSearch"
+  				xmlns:android="http://schemas.android.com/apk/res/android"
+  				android:layout_width="fill_parent"
+  				android:layout_height="wrap_content"
+  				android:layout_below="@id/profileRadioGroup">
+				<TextView
+					android:id="@+id/searchEventText"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:text="Search By:"
+				/>		
+				<EditText 
+					android:id ="@+id/searchEvent"
+ 					android:hint="Event Name"
+ 					android:layout_width="fill_parent"
+ 					android:layout_height="wrap_content"
+ 					android:typeface="serif"
+	 				android:phoneNumber="true"
+	 				android:layout_below="@id/searchEventText"
+				/>
+				 
+				<Button
+					android:id="@+id/profileOrgsAdvancedButton"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_below="@id/searchEvent"
+					android:text="@string/Advanced"
+					android:onClick="advancedButtonClicked"
+				/>	
+				</RelativeLayout>
+				</ScrollView>
+				
+				<!-- Profile Events Advanced Search -->
+				<ScrollView android:id="@+id/profileSearchScrollViewtwo"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/profileRadioGroup"
+				>
+				<RelativeLayout
+				android:id="@+id/profileEventsAdvancedSearch"
+  				xmlns:android="http://schemas.android.com/apk/res/android"
+  				android:layout_width="fill_parent"
+  				android:layout_height="wrap_content"
+  				android:layout_below="@id/profileRadioGroup">
+				<TextView
+					android:id="@+id/searchOrgText"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:text="Search By:"
+				/>		
+				<EditText 
+					android:id ="@+id/searchOrg"
+ 					android:hint="Host Organization"
+ 					android:layout_width="fill_parent"
+ 					android:layout_height="wrap_content"
+ 					android:typeface="serif"
+	 				android:phoneNumber="true"
+	 				android:layout_below="@id/searchOrgText"
+				/>
+				
+				<TextView
+					android:id="@+id/startDateText"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_below="@id/searchOrg"
+					android:text="Start Date:"
+				/>
+				<DatePicker
+					android:id="@+id/searchStartDate"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_below="@id/startDateText"
+				/>
+				<TextView
+					android:id="@+id/endDateText"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_below="@id/searchStartDate"
+					android:text="End Date:"
+				/>
+				<DatePicker
+					android:id="@+id/searchEndDate"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_below="@id/endDateText"
+				/>
+				<TextView
+					android:id="@+id/startTimeText"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_below="@id/searchEndDate"
+					android:text="Start Time:"
+				/>
+				<TimePicker
+ 					android:id="@+id/searchTime"
+ 					android:layout_width="wrap_content"
+ 					android:layout_height="wrap_content"
+ 					android:layout_below="@id/startTimeText"
+ 				 />
+ 				  
+			<Button
+					android:id="@+id/profileEventsAdvancedButton"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_below="@id/searchTime"
+					android:text="@string/Advanced"
+					android:onClick="advancedButtonClicked"
+				/>	
+			</RelativeLayout>
+
+		
+			 </ScrollView>
+			<Button
+					android:id="@+id/profileAdvancedButtonExtra"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_below="@id/profileRadioGroup"
+					android:text="@string/Advanced"
+					android:onClick="advancedButtonClicked"
+				/>	
+			
+			</RelativeLayout>
+		</FrameLayout>
+	</LinearLayout>
+</TabHost>

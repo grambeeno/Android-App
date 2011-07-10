@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Lokalite</string>
+    <string name="motto">Living life outside the box</string>
     <string name="settings">Settings</string>
     <string name="calendar">Calendar</string>
     <string name="emptylist">Nothing to display</string>

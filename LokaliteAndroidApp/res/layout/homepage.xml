@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:background="#FFFFFF">
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="vertical" android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_gravity="center_vertical">
+
+		<ImageView android:id="@+id/collegepediaLogo"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:paddingTop="0px" android:paddingBottom="0px"
+			android:src="@drawable/lokalite_logo" android:layout_gravity="center_horizontal" />
+
+		<TextView android:id="@+id/homePageMotto" android:gravity="center_horizontal"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:textColor="#434041"
+			android:paddingTop="10dp" android:text="@string/motto" />
+
+		<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			android:orientation="vertical" android:layout_width="fill_parent"
+			android:layout_height="fill_parent">
+			
+			<TextView android:id="@+id/homePageSignIn"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_below="@id/homePageMotto" android:text="Sign In"
+				android:clickable="true" android:onClick="createButtonPressed" />
+			
+			<TextView android:id="@+id/homePageSignUp"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_below="@id/homePageSignIn" android:text="Sign Up"
+				android:clickable="true" android:onClick="createButtonPressed" />
+				
+			<TextView android:id="@+id/homePageLearnMore"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_below="@id/homePageSignUp" android:text="Learn More"
+				android:clickable="true" android:onClick="createButtonPressed" />
+				
+			<TextView android:id="@+id/homePageHelp"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_below="@id/homePageLearnMore" android:text="Help"
+				android:clickable="true" android:onClick="createButtonPressed" />
+		</RelativeLayout>
+
+	</LinearLayout>
+</ScrollView>
