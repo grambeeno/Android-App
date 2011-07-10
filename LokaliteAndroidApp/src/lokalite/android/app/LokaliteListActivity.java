@@ -372,7 +372,6 @@ public class LokaliteListActivity extends ListActivity {
 			}
 			
 			Comparator locationDistComparator = new Comparator<T>() {
-				@Override
 				public int compare(T locationOne, T locationTwo) {
 					float[] resultsOne = new float[3];
 					float[] resultsTwo = new float[3];
